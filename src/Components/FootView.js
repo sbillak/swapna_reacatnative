@@ -74,7 +74,7 @@ export const ShoeList =()=>{
     listKey="shoeslist"
     // initialNumToRender={10}
     ItemSeparatorComponent = { ListItemSeparator}
-    data={shoeList.list.slice(0,10)}
+    data={shoeList.list}
     // ref={r=>refs=r}
     //maxToRenderPerBatch={10}
     renderItem={({item,index}) => (
