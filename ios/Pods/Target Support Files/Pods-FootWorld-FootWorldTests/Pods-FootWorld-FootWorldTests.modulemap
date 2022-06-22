@@ -1,0 +1,6 @@
+module Pods_FootWorld_FootWorldTests {
+  umbrella header "Pods-FootWorld-FootWorldTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
