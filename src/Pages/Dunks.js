@@ -228,7 +228,7 @@ export const Dunks = ({navigation}) => {
               </View>
             </View>
             <ListItemSeparator />
-            {/* <ShoeList></ShoeList>  */}
+            <ShoeList></ShoeList> 
             <ListItemSeparator />
             <Text
               style={styles.pagination}>
