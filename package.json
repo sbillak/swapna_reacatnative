@@ -12,11 +12,16 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/stack": "^6.2.1",
+    "add": "^2.0.6",
+    "lodash": "^4.17.21",
     "react": "17.0.2",
     "react-native": "0.68.2",
     "react-native-gesture-handler": "^2.4.2",
+    "react-native-pagination": "^1.5.5",
     "react-native-safe-area-context": "^4.3.1",
-    "react-native-swiper-flatlist": "^3.0.16"
+    "react-native-swiper": "^1.6.0",
+    "react-native-swiper-flatlist": "^3.0.16",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
