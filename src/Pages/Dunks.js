@@ -18,10 +18,45 @@ const styles = StyleSheet.create({
   navTitle: {
     flexDirection: 'row',
   },
-  retryButton: {
-    height: 16,
-    alignSelf: 'flex-end',
-    marginRight: 10,
+  signUp:{fontSize: 35, justifyContent: 'center', textAlign: 'center'},
+  search: {
+    marginLeft: 0,
+    marginRight: 5,
+    height: 30,
+    width: 30,
+  },
+  textInput:{
+    backgroundColor: 'black',
+    padding: 10,
+    borderRadius: 5,
+    margin: 0,
+  },
+  cart: {marginLeft: 25, marginRight: 5, height: 30, width: 30},
+  cartText: {
+    color: 'white',
+    paddingLeft: 8,
+    paddingTop: 8,
+    fontWeight: 'bold',
+  },
+  menuHeader:{
+    marginLeft: 25,
+    marginRight: 15,
+    height: 40,
+    width: 30,
+  },
+  menu: {height: 20, width: 20},
+  requestTextView:{
+    color: 'white',
+    padding: 10,
+    textAlign: 'center',
+    paddingRight: 20,
+    fontWeight: 'bold',
+  },
+  pagination:{
+    color: 'white',
+    fontSize: 26,
+    padding: 20,
+    fontWeight: 'bold',
   },
   textStyle: {
     color: 'grey',
@@ -44,6 +79,12 @@ const styles = StyleSheet.create({
     flex: 0.5,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  filterTextStyle:{
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    padding: 20,
   },
   requestText: {
     flexDirection: 'row',
@@ -104,33 +145,15 @@ export const Dunks = ({navigation}) => {
       <View style={{flexDirection: 'row'}}>
         <Image
           source={require('../../assets/images/search.png')}
-          style={{
-            marginLeft: 0,
-            marginRight: 5,
-            height: 30,
-            width: 30,
-          }}></Image>
+          style={styles.search}></Image>
         <ImageBackground
           source={require('../../assets/images/cart.png')}
-          style={{marginLeft: 25, marginRight: 5, height: 30, width: 30}}>
-          <Text
-            style={{
-              color: 'white',
-              paddingLeft: 8,
-              paddingTop: 8,
-              fontWeight: 'bold',
-            }}>
-            2
-          </Text>
+          style={styles.cart}>
+          <Text style={styles.cartText}>2</Text>
         </ImageBackground>
         <Image
           source={require('../../assets/images/menu.jpg')}
-          style={{
-            marginLeft: 25,
-            marginRight: 15,
-            height: 40,
-            width: 30,
-          }}></Image>
+          style={styles.menuHeader}></Image>
       </View>
     );
   };
@@ -153,7 +176,7 @@ export const Dunks = ({navigation}) => {
         navigation.navigate('Yeezys');
         break;
       default:
-        alert(item+ ' not available')
+        alert(item + ' not available');
         break;
     }
   };
@@ -193,12 +216,7 @@ export const Dunks = ({navigation}) => {
               <Text
                 style={[
                   styles.textStyle,
-                  {
-                    fontWeight: 'bold',
-                    color: 'white',
-                    textAlign: 'center',
-                    padding: 20,
-                  },
+                  styles.filterTextStyle,
                 ]}>
                 Filters
               </Text>
@@ -206,19 +224,14 @@ export const Dunks = ({navigation}) => {
                 <Text style={[styles.textStyle, {}]}>Open</Text>
                 <Image
                   source={require('../../assets/images/menu.jpg')}
-                  style={{height: 20, width: 20}}></Image>
+                  style={styles.menu}></Image>
               </View>
             </View>
             <ListItemSeparator />
             {/* <ShoeList></ShoeList>  */}
             <ListItemSeparator />
             <Text
-              style={{
-                color: 'white',
-                fontSize: 26,
-                padding: 20,
-                fontWeight: 'bold',
-              }}>
+              style={styles.pagination}>
               {' '}
               1{' '}
               <Text style={{color: 'gray'}}>
@@ -234,18 +247,10 @@ export const Dunks = ({navigation}) => {
             <Image
               source={require('../../assets/images/nike.png')}
               style={{height: 120}}></Image>
-            {/* <Text style={[styles.title,{fontSize:35}]}>Not Seeing {"\n"}What You're {"\n"}Looking For?</Text>
-                      <Text style={[styles.title,{padding:15,fontWeight:'normal'}]}>Our concierge service will track it down for you.</Text> */}
             <View style={{backgroundColor: '#404040', marginBottom: 100}}>
               <View style={styles.requestText}>
                 <Text
-                  style={{
-                    color: 'white',
-                    padding: 10,
-                    textAlign: 'center',
-                    paddingRight: 20,
-                    fontWeight: 'bold',
-                  }}>
+                  style={styles.requestTextView}>
                   REQUEST COCIERGE
                 </Text>
                 <Image
@@ -255,19 +260,14 @@ export const Dunks = ({navigation}) => {
               <Text
                 style={[
                   styles.title,
-                  {fontSize: 35, justifyContent: 'center', textAlign: 'center'},
+                  styles.signUp,
                 ]}>
                 Sign up For The Newsletter.
               </Text>
               <TextInput
                 placeholderTextColor={'red'}
                 placeHolder={'Your email here'}
-                style={{
-                  backgroundColor: 'black',
-                  padding: 10,
-                  borderRadius: 5,
-                  margin: 0,
-                }}
+                style={styles.textInput}
               />
               <View style={styles.row}>
                 <Text
@@ -275,14 +275,6 @@ export const Dunks = ({navigation}) => {
                   SUBSCRIBE
                 </Text>
               </View>
-              {/* <View
-        style={{
-          height: 1,
-          width: "100%",
-          backgroundColor: "white",
-        //   margingTop:-120
-        }}
-      /> */}
               <ListItemSeparator></ListItemSeparator>
               <View style={styles.imageArrow}>
                 <Image
@@ -302,6 +294,8 @@ export const Dunks = ({navigation}) => {
               <Text style={styles.titleTextStyle}> BLITZ</Text>
             </View>
             <FooterList navigationTo={navigationTo} />
+
+            
           </View>
         }
       />

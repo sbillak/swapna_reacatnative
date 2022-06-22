@@ -22,6 +22,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignContent: 'flex-end',
   },
+  items:{
+    color: 'gray',
+    fontSize: 17,
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+  itemList:{color: 'white', fontSize: 17, fontWeight: 'bold'}
 });
 
 const footerItems = [
@@ -69,7 +76,7 @@ export const FooterList = props => {
     return (
       <TouchableOpacity onPress={() => sectionCollapse(props.index)}>
         <View style={[styles.requestText]}>
-          <Text style={{color: 'white', fontSize: 17, fontWeight: 'bold'}}>
+          <Text style={styles.itemList}>
             {props.title}
           </Text>
           {collapsedState[props.index] ? (
@@ -93,12 +100,7 @@ export const FooterList = props => {
       return (
         <TouchableOpacity onPress={props.navigationTo}>
           <Text
-            style={{
-              color: 'gray',
-              fontSize: 17,
-              paddingTop: 10,
-              paddingBottom: 10,
-            }}>
+            style={styles.items}>
             {props.item}
           </Text>
         </TouchableOpacity>
