@@ -18,14 +18,28 @@ const styles = StyleSheet.create({
   navTitle: {
     flexDirection: 'row',
   },
-  signUp:{fontSize: 35, justifyContent: 'center', textAlign: 'center'},
+  footer: {color: 'grey', padding: 10, fontSize: 18},
+  footerStyle: {
+    justifyContent: 'center',
+    textAlign: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  logo: {
+    height: 30,
+    width: 30,
+    margin: 10,
+    backgroundColor: 'white',
+    borderRadius: 20,
+  },
+  signUp: {fontSize: 35, justifyContent: 'center', textAlign: 'center'},
   search: {
     marginLeft: 0,
     marginRight: 5,
     height: 30,
     width: 30,
   },
-  textInput:{
+  textInput: {
     backgroundColor: 'black',
     padding: 10,
     borderRadius: 5,
@@ -38,21 +52,21 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     fontWeight: 'bold',
   },
-  menuHeader:{
+  menuHeader: {
     marginLeft: 25,
     marginRight: 15,
     height: 40,
     width: 30,
   },
   menu: {height: 20, width: 20},
-  requestTextView:{
+  requestTextView: {
     color: 'white',
     padding: 10,
     textAlign: 'center',
     paddingRight: 20,
     fontWeight: 'bold',
   },
-  pagination:{
+  pagination: {
     color: 'white',
     fontSize: 26,
     padding: 20,
@@ -80,7 +94,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  filterTextStyle:{
+  filterTextStyle: {
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'center',
@@ -213,11 +227,7 @@ export const Dunks = ({navigation}) => {
             <Text style={styles.title}>DUNKS</Text>
             <ListItemSeparator />
             <View style={styles.tabs}>
-              <Text
-                style={[
-                  styles.textStyle,
-                  styles.filterTextStyle,
-                ]}>
+              <Text style={[styles.textStyle, styles.filterTextStyle]}>
                 Filters
               </Text>
               <View style={[styles.filterText, {flexDirection: 'row'}]}>
@@ -228,10 +238,9 @@ export const Dunks = ({navigation}) => {
               </View>
             </View>
             <ListItemSeparator />
-            <ShoeList></ShoeList> 
+            <ShoeList></ShoeList>
             <ListItemSeparator />
-            <Text
-              style={styles.pagination}>
+            <Text style={styles.pagination}>
               {' '}
               1{' '}
               <Text style={{color: 'gray'}}>
@@ -249,19 +258,12 @@ export const Dunks = ({navigation}) => {
               style={{height: 120}}></Image>
             <View style={{backgroundColor: '#404040', marginBottom: 100}}>
               <View style={styles.requestText}>
-                <Text
-                  style={styles.requestTextView}>
-                  REQUEST COCIERGE
-                </Text>
+                <Text style={styles.requestTextView}>REQUEST COCIERGE</Text>
                 <Image
                   source={require('../../assets/images/arrow3.png')}
                   style={{height: 20, width: 30}}></Image>
               </View>
-              <Text
-                style={[
-                  styles.title,
-                  styles.signUp,
-                ]}>
+              <Text style={[styles.title, styles.signUp]}>
                 Sign up For The Newsletter.
               </Text>
               <TextInput
@@ -294,8 +296,28 @@ export const Dunks = ({navigation}) => {
               <Text style={styles.titleTextStyle}> BLITZ</Text>
             </View>
             <FooterList navigationTo={navigationTo} />
-
-            
+            <View style={{marginTop: 20}}>
+              <ListItemSeparator />
+            </View>
+            <View style={styles.footerStyle}>
+              <View style={{flexDirection: 'row'}}>
+                <Image
+                  source={require('../../assets/images/fb.png')}
+                  style={styles.logo}></Image>
+                <Image
+                  source={require('../../assets/images/insta.png')}
+                  style={styles.logo}></Image>
+                <Image
+                  source={require('../../assets/images/twitt.png')}
+                  style={styles.logo}></Image>
+              </View>
+              <Text style={styles.footer}>
+                POWERED BY <Text style={{fontWeight: 'bold'}}> PROTON</Text>
+              </Text>
+              <Text style={styles.footer}>
+                2022 Blitz Project. All rights reserved.
+              </Text>
+            </View>
           </View>
         }
       />
